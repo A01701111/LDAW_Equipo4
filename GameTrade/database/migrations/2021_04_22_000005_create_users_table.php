@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             ->constrained()
             ->onUpdate('cascade')
             ->onDelete('cascade');
+            
 
         });
     }

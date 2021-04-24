@@ -26,6 +26,7 @@ class UserFactory extends Factory
             'Username'=> $this->faker->userName(),
             'Email'=> $this->faker->email(),
             'Password'=>$this->faker->password(),
+            'ID_Rol'=>$this->faker->numberBetween(1,2),
         ];
     }
 }

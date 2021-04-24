@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Oferta;
 
 class OfertaSeeder extends Seeder
 {
@@ -13,6 +14,6 @@ class OfertaSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Oferta::factory()->count(15)->create();
     }
 }

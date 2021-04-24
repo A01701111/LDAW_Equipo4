@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Videogame;
 
-class VideoGameSeeder extends Seeder
+class VideogameSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +14,6 @@ class VideoGameSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Videogame::factory()->count(50)->create();
     }
 }

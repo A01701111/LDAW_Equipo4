@@ -22,7 +22,9 @@ class ReviewFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'ID_User'=>$this->faker->numberBetween(1,50),
+            'ID_Videojuego'=>$this->faker->numberBetween(1,50),
+            'Contenido'=>$this->faker->text(200),
         ];
     }
 }

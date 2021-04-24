@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Priviledge extends Model
 {
     use HasFactory;
+    public $timestamps = false;
 }

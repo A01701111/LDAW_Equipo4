@@ -22,7 +22,9 @@ class OfertaFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'ID_Estatus'=>$this->faker->numberBetween(1,3),
+            'ID_Videojuego_Ofertado'=>$this->faker->numberBetween(1,50),
+            'ID_Videojuego_Poseido'=>$this->faker->numberBetween(1,50),
         ];
     }
 }
