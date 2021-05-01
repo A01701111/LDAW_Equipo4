@@ -31831,9 +31831,9 @@ video {
   --tw-backdrop-sepia: sepia(100%);
 }
 
-body{
-  background: url(/images/bg.png?a9a4ed92b15020fbe84ad7baf3766ef1);
-}
+/* body{
+    background: url(../../public/Media/bg.png);
+} */
 
 @media (min-width: 640px) {
   .sm\:container {
