@@ -26,7 +26,7 @@ class VideogameFactory extends Factory
             'ID_User'=> $this->faker->numberBetween(1,50),
             'Descripcion'=> $this->faker->text(100),
             'Consola'=>$this->faker->randomElement(['Xbox One', 'PS1','PS2','PS3','PS4','PS5','Switch']),
-            'Estado_Fisico'=>$this->faker->randomElement(['Excelente', 'Bueno','Malo']),
+            'Estado_Fisico'=>$this->faker->randomElement(['Excelente', 'Bueno','Malo','Intermedio']),
         ];
     }
 }
