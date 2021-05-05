@@ -15,7 +15,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
-use App\Http\Controllers\GamesController;
+use App\Http\Controllers\TeamController;
 
 Route::post('/sanctum/token', function (Request $request) {
     $request->validate([
@@ -50,5 +50,5 @@ Route::get('team/{name}', function ($name) {
     return $team[$name];
 });
 
-Route::middleware('auth:sanctum')->get('/games', [GamesController::class, "index"]);
+Route::middleware('auth:sanctum')->get('/games/{name}', [TeamController::class, "index"]);
 
