@@ -17,7 +17,7 @@
 <body class="bg-gray-100">
     <!-- navbar goes here  max-w-6xl-->
     <nav class="" id="navbar">
-        <div class="w-screen mx-auto px-4 sticky">
+        <div class="max-w-6xl mx-auto px-4 sticky">
             <div class="flex justify-between">
 
                 <div class="flex space-x-4">
@@ -31,9 +31,9 @@
                 </div>
 
                 <!-- menu nav to the right -->
-                <div class="hidden md:flex items-center space-x-1 mr-3">
-                    <a href="{{route('register')}} " class="h-full py-5 align-middle px-3 text-white hover:text-grey-300">Sign Up</a>
-                    <a href="" class="h-full py-5 align-middle px-3 text-white hover:text-grey-300">Login</a>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="{{route('register')}}" class="h-full py-5 align-middle px-3 text-white hover:text-grey-300">Sign Up</a>
+                    <a href="{{url('/login')}}" class="h-full py-5 align-middle px-3 text-white hover:text-grey-300">Login</a>
                     <a href="" class="h-full py-5 align-middle px-3 mx-5 text-white hover:text-grey-300 border-b-8 main-red-border">Home</a>
                     <div class="flex items-center dropdown mr-3 ml-7">
                         <span class="material-icons text-white">
@@ -52,7 +52,7 @@
                 <!-- mobile button goes here -->
                 <div class="md:hidden flex items-center outline-none mr-3">
                     <button class="mobile-menu-button">
-                        <svg class="w-6 h-6 outline-none text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        <svg class="w-6 h-6 outline-none text-white focus:outline-none" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" />
@@ -100,9 +100,9 @@
 
         </div>
     </nav>
-    <div class="p-0 m-0 h-screen">
+    
         @yield('content')
-    </div>
+    
     <footer class="grid-container-footer">
         <div class="flex flex-col footer-info text-white">
             <p class="subpixel-antialiased font-bold mb-5 text-xl">Sitio creado por:</p>

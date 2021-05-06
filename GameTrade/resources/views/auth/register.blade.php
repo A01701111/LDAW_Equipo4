@@ -2,7 +2,7 @@
 @section('content')
 {{-- justify-items-center: center on x 
     items-center center on y --}}
-    <div class="grid grid-cols-1 justify-items-center py-4 h-full ">
+    <div class="grid grid-cols-1 justify-items-center py-4 h-full">
         <div class="grid grid-cols-2 shadow-2xl  h-5/6 w-5/6">
             <div class="main-dark rounded-l-xl">
                 <h1 class="text-white text-5xl font-bold ml-16 mt-16">Game Trader</h1>

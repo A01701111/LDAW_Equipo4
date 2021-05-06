@@ -10,4 +10,8 @@ class RegisterController extends Controller
     {
         return view('auth.register');
     }
+    public function login_view()
+    {
+        return view('auth.login');
+    }
 }

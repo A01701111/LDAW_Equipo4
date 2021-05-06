@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/sign-up',[RegisterController::class,'index'])->name('register');
+Route::get('/login',[RegisterController::class,'login_view']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
