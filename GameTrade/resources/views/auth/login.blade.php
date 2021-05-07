@@ -20,6 +20,7 @@
                 </div>
                 <div class="flex flex-col my-10 mb-20">
                     <input class="main-red rounded-full py-1 text-white w-full text-lg" type="submit" value="Login" name="action">
+                    <a class="underline text-gray-400 p-3 ml-5" href="/sign-up">Sign Up</a>
                 </div>
 
             </form>

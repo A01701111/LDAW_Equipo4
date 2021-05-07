@@ -16,6 +16,6 @@ class RegisterController extends Controller
     }
     public function success()
     {
-        return view('team');
+        return view('dashboard');
     }
 }

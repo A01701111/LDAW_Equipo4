@@ -20,7 +20,7 @@
                     </div>
                     <div class="flex flex-col my-2">
                         <label class="my-2" for="mail">Email</label>
-                        <input class="w-full py-2.5 px-4 rounded-lg bg-gray-100 focus:shadow focus:bg-gray-200 focus:outline-none" type="email" name="mail" id="mail" placeholder="mail">
+                        <input class="w-full py-2.5 px-4 rounded-lg bg-gray-100 focus:shadow focus:bg-gray-200 focus:outline-none"  type="email" name="email" id="email" placeholder="mail">
                     </div>
                     <div class="flex flex-col my-2">
                         <label class="my-2" for="password">Password</label>
@@ -32,7 +32,7 @@
                     </div>
                     <div class="flex flex-row my-10">
                         <input class="main-red rounded-full p-3 text-white w-2/5 text-lg" type="submit" value="Sign up">
-                        <a class="underline text-gray-400 p-3 ml-5" href="{{url('/sign-in')}}">Sign in</a>
+                        <a class="underline text-gray-400 p-3 ml-5" href="/login">Sign in</a>
                     </div>
             </form>
         </div>

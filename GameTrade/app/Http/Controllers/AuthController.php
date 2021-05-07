@@ -21,7 +21,7 @@ class AuthController extends Controller
         if ($token = Authentication::getToken($email, $password, $device)) {
             $request->session()->regenerate();
             $request->session()->put('token', $token['token']);
-            return redirect('/team');
+            return redirect('/success');
         }
 
         return redirect('/login')->with('error', 'Email o contraseña incorrectos');

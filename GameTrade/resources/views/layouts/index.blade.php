@@ -23,7 +23,7 @@
                 <div class="flex space-x-4">
                     <!-- Page name -->
                     <div>
-                        <a href="#" class="flex items-center py-5 text-white hover:text-gray-300">
+                        <a href="/" class="flex items-center py-5 text-white hover:text-gray-300">
 
                             <span class="font-bold text-2xl">Game Trader</span>
                         </a>
@@ -32,8 +32,11 @@
 
                 <!-- menu nav to the right -->
                 <div class="hidden md:flex items-center space-x-1">
+                    @if (!(session('token')))
                     <a href="{{route('register')}}" class="h-full py-5 align-middle px-3 text-white hover:text-grey-300">Sign Up</a>
                     <a href="{{url('/login')}}" class="h-full py-5 align-middle px-3 text-white hover:text-grey-300">Login</a>
+                    @endif
+                    @if (session('token'))
                     <a href="" class="h-full py-5 align-middle px-3 mx-5 text-white hover:text-grey-300 border-b-8 main-red-border">Home</a>
                     <div class="flex items-center dropdown mr-3 ml-7">
                         <span class="material-icons text-white">
@@ -46,6 +49,7 @@
                             <a href="cerrar">Log out</a>
                         </div>
                     </div>
+                    @endif
 
                 </div>
 
