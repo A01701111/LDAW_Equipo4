@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
-Route::get('/team', function () {
-    return view('team');
-});
+Route::get('/team',[RegisterController::class,'success'])->middleware('auth');
+
+Route::post('/iniciar',[AuthController::class,'login']);
+
+Route::get('/cerrar',[AuthController::class,'logout'])->name('logout')->middleware('auth');
+

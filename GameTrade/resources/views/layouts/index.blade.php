@@ -43,7 +43,7 @@
                             account_circle
                         </span>
                         <div class="dropdown-content mr-5">
-                            <a href="">Log out</a>
+                            <a href="cerrar">Log out</a>
                         </div>
                     </div>
 
