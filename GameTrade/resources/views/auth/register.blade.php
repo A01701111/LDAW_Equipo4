@@ -2,14 +2,17 @@
 @section('content')
 {{-- justify-items-center: center on x 
     items-center center on y --}}
-    <div class="grid grid-cols-1 justify-items-center py-4 h-full">
-        <div class="grid grid-cols-2 shadow-2xl  h-5/6 w-5/6">
-            <div class="main-dark rounded-l-xl">
-                <h1 class="text-white text-5xl font-bold ml-16 mt-16">Game Trader</h1>
-
+<div class="grid grid-cols-1 justify-items-center items center py-10  w-full">
+    <div class="shadow-2xl container-sigup mx-3">
+        <div class="main-dark lg:rounded-l-xl item-A-register">
+            <h1 class="text-white font-bold item-A-register-title">Game Trader</h1>
+            <div class="flex flex-row item-A-register-links">
+                <a class="no-underline text-main-red mr-2" href="">About</a>
+                <a class="no-underline text-main-red mx-2" href="">Contact</a>
             </div>
-            <div class="bg-white rounded-r-xl flex flex-col px-10 ">
-                <form action="" method="POST">
+        </div>
+        <div class="bg-white lg:rounded-r-xl rounded-b-xl flex flex-col px-10 item-B-register">
+            <form action="" method="POST">
                     @csrf
                     <div class="flex flex-col my-2">
                         <label class="my-2" for="username">Username</label>
@@ -31,8 +34,9 @@
                         <input class="main-red rounded-full p-3 text-white w-2/5 text-lg" type="submit" value="Sign up">
                         <a class="underline text-gray-400 p-3 ml-5" href="{{url('/sign-in')}}">Sign in</a>
                     </div>
-                </form>
-            </div>
+            </form>
         </div>
     </div>
+</div>
+</div>
 @endsection
