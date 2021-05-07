@@ -39,16 +39,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('team/{name}', function ($name) {
-
-    $file = public_path().'/json/team.json';
-
-    if ($fileContents = file_get_contents($file)){
-        $team = json_decode($fileContents,true);
-    }
-
-    return $team[$name];
-});
-
 Route::middleware('auth:sanctum')->get('/games/{name}', [TeamController::class, "index"]);
 
