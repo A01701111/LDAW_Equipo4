@@ -5,13 +5,12 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class RedirectIfAuthenticated
-{
+class HasToken{
     public function handle(Request $request, Closure $next){
 
-        if ($request->session()->get('token')) {
+        if (!$request->session()->get('token')) {
 
-            return redirect('/dashboard');
+            return redirect('/login');
 
         }
         
