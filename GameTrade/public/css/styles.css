@@ -17,6 +17,10 @@
   background-color: #F23953;
 }
 
+.text-main-red {
+  color: #F23953;
+}
+
 .main-red-border {
   border-color: #F23953;
 }
@@ -79,5 +83,65 @@
 @media screen and (max-width: 767px) {
   #navbar {
     border-bottom: 8px solid #F23953;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .container-sigup {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(50%, 500px));
+  }
+
+  .item-A-register {
+    display: grid;
+    grid-template-columns: 10% auto;
+    grid-template-rows: 5% 1fr 4fr 1fr;
+  }
+
+  .item-A-register-title {
+    grid-column: 2/auto;
+    grid-row: 2/auto;
+    align-self: center;
+    font-size: 3.4vw;
+  }
+
+  .item-A-register-links {
+    grid-column: 2/auto;
+    grid-row: 4/auto;
+    align-self: center;
+  }
+
+  .item-B-register {
+    align-self: center;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .container-sigup {
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+
+  .item-A-register {
+    border-radius: 0.75rem 0.75rem 0 0;
+    display: grid;
+    grid-template-rows: 10% 1fr 1fr 10%;
+    grid-template-columns: 10% auto;
+  }
+
+  .item-A-register-title {
+    grid-column: 2/auto;
+    grid-row: 2/auto;
+    align-self: center;
+    font-size: 1.5rem;
+  }
+
+  .item-A-register-links {
+    grid-column: 2/auto;
+    grid-row: 3/auto;
+    align-self: center;
+    font-size: 1rem;
+  }
+
+  .item-B-register {
+    align-self: center;
   }
 }
