@@ -19,7 +19,7 @@ Route::get('/sign-up',[RegisterController::class,'index'])->name('register')->mi
 Route::get('/login',[RegisterController::class,'login_view'])->middleware('guest');
 
 Route::get('/',function () {
-    return view('dashboard');
+    return view('landing');
 });
 
 Route::get('/dashboard', function () {
