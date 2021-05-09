@@ -9,7 +9,8 @@ class RedirectIfAuthenticated
 {
     public function handle(Request $request, Closure $next){
 
-        if ($request->session()->get('token')) {
+
+        if ($request->session()->has('token')) {
 
             return redirect('/dashboard');
 
