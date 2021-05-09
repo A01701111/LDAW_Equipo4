@@ -8,6 +8,11 @@
   background-color: #2F2F2F;
 }
 
+.round-btn-48 {
+  width: 48px;
+  height: 48px;
+}
+
 .md-48 {
   font-size: 48px !important;
   color: white;
@@ -192,4 +197,67 @@
 }
 .catalog-card .catalog-card-content {
   padding: 1em;
+}
+
+.container-catalog-menu {
+  display: grid;
+  grid-template-columns: 6% auto 50% auto auto auto 6%;
+  grid-template-rows: 1fr;
+}
+
+.item-menu-1 {
+  grid-column: 2/auto;
+  align-self: center;
+}
+
+.item-menu-2 {
+  grid-column: 4/auto;
+}
+
+.item-menu-3 {
+  grid-column: 5/auto;
+}
+
+.item-menu-4 {
+  grid-column: 6/auto;
+}
+
+.search {
+  width: 100%;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #F23953;
+  border-radius: 7px;
+  border-right: none;
+  padding: 8px;
+  height: 48px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #a9a9a9;
+  background-color: #2F2F2F;
+}
+.searchTerm:focus {
+  background-color: white;
+  color: black;
+}
+
+.searchButton {
+  width: 48px;
+  height: 48px;
+  border-radius: 7px;
+  border: 1px solid #F23953;
+  background: #F23953;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap {
+  width: 100%;
 }
