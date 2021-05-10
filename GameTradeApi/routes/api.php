@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\TitleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,3 +45,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::middleware('auth:sanctum')->get('/games/{name}', [TeamController::class, "index"]);
 
 Route::post('/newuser', [NewUser::class, "index"]);
+Route::get('/get-titles', [TitleController::class, "index"]);
+
