@@ -9,9 +9,17 @@ class RedirectIfAuthenticated
 {
     public function handle(Request $request, Closure $next){
 
-        if ($request->session()->get('token')) {
 
-            return redirect('/dashboard');
+        if ($request->session()->has('token')) {
+
+            if ($request->session()->get('rol') == 1) {
+
+                return redirect('/dashboard');
+
+            }else{
+
+                return redirect('/admin');
+            }
 
         }
         

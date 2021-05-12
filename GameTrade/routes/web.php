@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TitleController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,19 +15,21 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/sign-up',[RegisterController::class,'index'])->name('register')->middleware('guest');
+Route::get('/sign-up',[RegisterController::class,'index'])->middleware('guest')->name('register');
+
+Route::post('/createuser',[RegisterController::class,'create'])->middleware('guest');
 
 Route::get('/login',[RegisterController::class,'login_view'])->middleware('guest');
 
-Route::get('/',function () {
-    return view('landing');
-});
+Route::get('/',[TitleController::class,'landing']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+Route::get('/dashboard',[TitleController::class,'dashboard'])->middleware('auth')->middleware('user');
 
-Route::get('/success',[RegisterController::class,'success'])->middleware('auth');
+Route::get('/admin', function () {
+
+    return view('team');
+    
+})->middleware('admin');
 
 Route::post('/iniciar',[AuthController::class,'login']);
 

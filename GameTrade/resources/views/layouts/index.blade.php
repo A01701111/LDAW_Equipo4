@@ -70,38 +70,41 @@
         <!-- mobile menu -->
         <div class="mobile-menu hidden md:hidden">
             <div class="flex mx-6 justify-between mb-2 border-b-2 border-gray-500">
-                <a href="#" class="mr-3 text-white hover:text-gray-300 self-center">Home</a>
+                <a href="/dashboard" class="mr-3 text-white hover:text-gray-300 self-center">Home</a>
                 <span class="material-icons text-white self-center">
                     home
                 </span>
             </div>
+            
             <div class="flex mx-6 justify-between my-2 border-b-2 border-gray-500">
-                <a href="#" class="mr-3 text-white hover:text-gray-300 self-center">Search</a>
+                <a href="/" class="mr-3 text-white hover:text-gray-300 self-center">Search</a>
                 <span class="material-icons text-white self-center">
                     search
                 </span>
             </div>
+            @if (session('token'))
             <div class="flex mx-6 justify-between my-2 border-b-2 border-gray-500">
                 <a href="#" class="mr-3 text-white hover:text-gray-300 self-center">Register a physical copy</a>
                 <span class="material-icons text-white self-center">
                     add
                 </span>
             </div>
-            <div class="flex mx-6 justify-between my-2 border-b-2 border-gray-500">
-                <a href="#" class="mr-3 text-white hover:text-gray-300 self-center">Submit title</a>
-                <span class="material-icons text-white self-center">
-                    file_upload
-                </span>
-            </div>
 
             <div class="flex mx-6 justify-between my-2 border-b-2 border-gray-500">
-                <a href="#" class="mr-3 text-white hover:text-gray-300 self-center">Log out</a>
+                <a href="cerrar" class="mr-3 text-white hover:text-gray-300 self-center">Log out</a>
                 <span class="material-icons text-white self-center">
                     logout
                 </span>
             </div>
-
-
+            @endif
+            @if (!(session('token')))
+            <div class="flex mx-6 justify-between my-2 border-b-2 border-gray-500">
+                <a href="/login" class="mr-3 text-white hover:text-gray-300 self-center">Log in</a>
+                <span class="material-icons text-white self-center">
+                    login
+                </span>
+            </div>
+            @endif
         </div>
     </nav>
     
