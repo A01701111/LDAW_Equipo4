@@ -31,7 +31,7 @@ class AuthController extends Controller
 
                 $request->session()->put('email', $email);
 
-                return redirect('/success');
+                return redirect('/dashboard');
             }
         }
 

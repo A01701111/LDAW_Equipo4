@@ -25,60 +25,13 @@
     </div>
 </div>
 <div class="container-catalog py-16">
+@foreach($titulos as $id => $title)
     <div class="catalog-card">
-        <img src="{{asset('storage/img/dummy1.jpg')}}" alt="" srcset="">
+        <img src="{{$title['Link']}}" alt="{{asset('storage/img/dummy1.jpg')}}" srcset="">
         <div class="catalog-card-content">
-            Titulo de juego
+            {{$title['Nombre']}}
         </div>
     </div>
-
-    <div class="catalog-card">
-        <img src="{{asset('storage/img/dummy1.jpg')}}" alt="" srcset="">
-        <div class="catalog-card-content">
-            Titulo de juego
-        </div>
-    </div>
-
-    <div class="catalog-card">
-        <img src="{{asset('storage/img/dummy1.jpg')}}" alt="" srcset="">
-        <div class="catalog-card-content">
-            Titulo de juego
-        </div>
-    </div>
-
-    <div class="catalog-card">
-        <img src="{{asset('storage/img/dummy1.jpg')}}" alt="" srcset="">
-        <div class="catalog-card-content">
-            Titulo de juego
-        </div>
-    </div>
-
-    <div class="catalog-card">
-        <img src="{{asset('storage/img/dummy1.jpg')}}" alt="" srcset="">
-        <div class="catalog-card-content">
-            Titulo de juego
-        </div>
-    </div>
-
-    <div class="catalog-card">
-        <img src="{{asset('storage/img/dummy1.jpg')}}" alt="" srcset="">
-        <div class="catalog-card-content">
-            Titulo de juego
-        </div>
-    </div>
-    <div class="catalog-card">
-        <img src="{{asset('storage/img/dummy1.jpg')}}" alt="" srcset="">
-        <div class="catalog-card-content">
-            Titulo de juego
-        </div>
-    </div>
-    <div class="catalog-card">
-        <img src="{{asset('storage/img/dummy1.jpg')}}" alt="" srcset="">
-        <div class="catalog-card-content">
-            Titulo de juego
-        </div>
-    </div>
-
-
+@endforeach
 </div>
 @endsection

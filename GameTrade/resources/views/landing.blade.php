@@ -12,60 +12,14 @@
     <h3 class="text-2xl font-bold">Find the game you want</h3>
 </div>
 <div class="container-catalog">
+@foreach($titulos as $id => $title)
     <div class="catalog-card">
-        <img src="{{asset('storage/img/dummy1.jpg')}}" alt="" srcset="">
+        <img src=" {{$title['Link']}}" alt="#" srcset="">
         <div class="catalog-card-content">
-            Titulo de juego
+            {{$title['Nombre']}}
         </div>
     </div>
-
-    <div class="catalog-card">
-        <img src="{{asset('storage/img/dummy1.jpg')}}" alt="" srcset="">
-        <div class="catalog-card-content">
-            Titulo de juego
-        </div>
-    </div>
-
-    <div class="catalog-card">
-        <img src="{{asset('storage/img/dummy1.jpg')}}" alt="" srcset="">
-        <div class="catalog-card-content">
-            Titulo de juego
-        </div>
-    </div>
-
-    <div class="catalog-card">
-        <img src="{{asset('storage/img/dummy1.jpg')}}" alt="" srcset="">
-        <div class="catalog-card-content">
-            Titulo de juego
-        </div>
-    </div>
-
-    <div class="catalog-card">
-        <img src="{{asset('storage/img/dummy1.jpg')}}" alt="" srcset="">
-        <div class="catalog-card-content">
-            Titulo de juego
-        </div>
-    </div>
-
-    <div class="catalog-card">
-        <img src="{{asset('storage/img/dummy1.jpg')}}" alt="" srcset="">
-        <div class="catalog-card-content">
-            Titulo de juego
-        </div>
-    </div>
-    <div class="catalog-card">
-        <img src="{{asset('storage/img/dummy1.jpg')}}" alt="" srcset="">
-        <div class="catalog-card-content">
-            Titulo de juego
-        </div>
-    </div>
-    <div class="catalog-card">
-        <img src="{{asset('storage/img/dummy1.jpg')}}" alt="" srcset="">
-        <div class="catalog-card-content">
-            Titulo de juego
-        </div>
-    </div>
-
+@endforeach
 
 </div>
 <div class="grid grid-cols-1 justify-items-center items center py-10">

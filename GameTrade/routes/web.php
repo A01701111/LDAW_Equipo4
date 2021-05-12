@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\TitleController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,23 +21,15 @@ Route::post('/createuser',[RegisterController::class,'create'])->middleware('gue
 
 Route::get('/login',[RegisterController::class,'login_view'])->middleware('guest');
 
-Route::get('/',function () {
-    return view('landing');
-});
+Route::get('/',[TitleController::class,'landing']);
 
-Route::get('/dashboard', function () {
-    
-    return view('dashboard');
-
-})->middleware('user');
+Route::get('/dashboard',[TitleController::class,'dashboard'])->middleware('auth')->middleware('user');
 
 Route::get('/admin', function () {
 
     return view('team');
     
 })->middleware('admin');
-
-Route::get('/success',[RegisterController::class,'success'])->middleware('auth');
 
 Route::post('/iniciar',[AuthController::class,'login']);
 

@@ -16,10 +16,7 @@ class RegisterController extends Controller
     {
         return view('auth.login');
     }
-    public function success()
-    {
-        return view('dashboard');
-    }
+    
     public function create(Request $request){
 
         $request->validate([
@@ -41,7 +38,7 @@ class RegisterController extends Controller
             if ($token = Authentication::getToken($email, $password, $device)) {
                 $request->session()->regenerate();
                 $request->session()->put('token', $token['token']);
-                return redirect('/success');
+                return redirect('/dashboard');
             }
         }
 
