@@ -12,7 +12,14 @@ class RedirectIfAuthenticated
 
         if ($request->session()->has('token')) {
 
-            return redirect('/dashboard');
+            if ($request->session()->get('rol') == 1) {
+
+                return redirect('/dashboard');
+
+            }else{
+
+                return redirect('/admin');
+            }
 
         }
         

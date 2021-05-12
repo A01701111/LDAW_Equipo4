@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Authentication;
+use App\Models\Rol_Priviledge;
 
 
 class AuthController extends Controller 
@@ -19,9 +20,19 @@ class AuthController extends Controller
         $device = $request->header('User-Agent', 'default');
 
         if ($token = Authentication::getToken($email, $password, $device)) {
+            
             $request->session()->regenerate();
-            $request->session()->put('token', $token['token']);
-            return redirect('/success');
+
+            $request->session()->put('token', $token['token']['plainTextToken']);
+
+            if ($rol = Rol_Priviledge::getRol($email)) {
+
+                $request->session()->put('rol', $rol);
+
+                $request->session()->put('email', $email);
+
+                return redirect('/success');
+            }
         }
 
         return redirect('/login')->with('error', 'Email o contraseña incorrectos');

@@ -25,8 +25,16 @@ Route::get('/',function () {
 });
 
 Route::get('/dashboard', function () {
+    
     return view('dashboard');
-});
+
+})->middleware('user');
+
+Route::get('/admin', function () {
+
+    return view('team');
+    
+})->middleware('admin');
 
 Route::get('/success',[RegisterController::class,'success'])->middleware('auth');
 
