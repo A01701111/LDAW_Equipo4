@@ -23,9 +23,13 @@
 
 </div>
 <div class="grid grid-cols-1 justify-items-center items center py-10">
-    <h3 class="text-xl font-bold py-6">And many more...</h3>
+@foreach($advice as $id => $ad)
+    <h3 class="text-xl font-bold py-6">{{$ad['advice']}}</h3>
+@endforeach
+@if (!(session('token')))
     <a class="py-6 inline-block bg-gradient-to-br from-red-400 to-red-600 py-4 px-12 rounded-full text-xl text-white uppercase tracking-wide shadow-xs hover:shadow-2xl active:shadow-xl transform hover:-translate-y-1 active:translate-y-0 transition duration-200 "
         href="{{route('register')}} ">Join now</a>
+        @endif
 </div>
 
 @endsection

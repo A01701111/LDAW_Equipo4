@@ -49,5 +49,7 @@ Route::post('/newuser', [NewUser::class, "index"]);
 
 Route::get('/get-titles', [TitleController::class, "index"]);
 
+Route::middleware('auth:sanctum')->post('/add-title', [TitleController::class, "addTitle"]);
+
 Route::middleware('auth:sanctum')->post('/rol', [RolController::class, "index"]);
 

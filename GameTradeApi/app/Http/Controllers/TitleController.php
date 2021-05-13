@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Title;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TitleController extends Controller
 {
@@ -17,6 +18,17 @@ class TitleController extends Controller
     {
         return Title::get();
     }
+
+    public function addTitle(Request $request){
+
+        DB::table('titles')->insert([
+
+            'Nombre'=> $request->name,
+            'Link'=> $request->link,
+            
+        ]);
+
+    } 
 
     /**
      * Store a newly created resource in storage.
