@@ -31,7 +31,17 @@ class AuthController extends Controller
 
                 $request->session()->put('email', $email);
 
-                return redirect('/dashboard');
+                if($rol == 1){
+
+                    return redirect('/dashboard');
+
+                }else{
+
+                    return redirect('/admin');
+
+                }
+
+                
             }
         }
 

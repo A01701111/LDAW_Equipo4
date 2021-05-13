@@ -25,11 +25,16 @@ Route::get('/',[TitleController::class,'landing']);
 
 Route::get('/dashboard',[TitleController::class,'dashboard'])->middleware('auth')->middleware('user');
 
-Route::get('/admin', function () {
+Route::get('/admin',[TitleController::class,'portal'])->middleware('auth')->middleware('admin');
 
-    return view('team');
-    
-})->middleware('admin');
+Route::get('/admin-add',function () {
+
+    return view('admin.agregar');
+
+})->middleware('auth')->middleware('admin');
+
+Route::post('/agregar-titulo',[TitleController::class,'agregar'])->middleware('auth')->middleware('admin');
+
 
 Route::post('/iniciar',[AuthController::class,'login']);
 
