@@ -18,6 +18,10 @@
   color: white;
 }
 
+.md-100 {
+  font-size: 100px !important;
+}
+
 .main-red {
   background-color: #F23953;
 }
@@ -260,4 +264,13 @@
 /*Resize the wrap to see the search bar change!*/
 .wrap {
   width: 100%;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: 60% auto;
+  grid-template-columns: auto auto;
+}
+.game-container:nth-child(3) {
+  grid-column: 1/span 2;
 }

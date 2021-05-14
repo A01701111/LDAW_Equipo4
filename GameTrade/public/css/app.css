@@ -31837,7 +31837,6 @@ video {
 
 #hero-landing {
   background-image: url(/images/landingHero.png?4ff080740b59003ff7c6791d51422be3);
-  z-index: -1;
 }
 
 @media (min-width: 640px) {

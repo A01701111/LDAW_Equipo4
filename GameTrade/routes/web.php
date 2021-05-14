@@ -3,6 +3,7 @@
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TitleController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,6 +40,8 @@ Route::post('/agregar-titulo',[TitleController::class,'agregar'])->middleware('a
 Route::post('/iniciar',[AuthController::class,'login']);
 
 Route::get('/cerrar',[AuthController::class,'logout'])->name('logout')->middleware('auth');
+
+Route::get('/game-info',[GameController::class,'index']);
 
 /*
 Notas de emilio:
