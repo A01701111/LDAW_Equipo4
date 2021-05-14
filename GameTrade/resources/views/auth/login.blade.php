@@ -9,7 +9,10 @@
                 <h1 class="text-2xl font-bold text-center my-14">Login</h1>
                 <div class="flex flex-col my-2">
                     <label class="my-2 font-bold" for="mail">Email</label>
-                    <input required class="w-full py-2.5 px-4 rounded-lg bg-gray-100 focus:shadow focus:bg-gray-200 focus:outline-none" type="email" name="email" id="email" placeholder="mail">
+                    <input required class="w-full py-2.5 px-4 rounded-lg bg-gray-100 focus:shadow focus:bg-gray-200 focus:outline-none @error('email') border-red-500 @enderror" type="email" name="email" id="email" placeholder="mail" value="{{@old('email')}} ">
+                    @error('email') 
+                    {{$message}}
+                    @enderror
                 </div>
                 <div class="flex flex-col my-2">
                     <label class="my-2 font-bold" for="password">Password</label>
