@@ -14,24 +14,26 @@
         </span>
     </button>
     <div class="wrap item-menu-4">
+    <form action="/buscar" method="get">
         <div class="search">
-            <input type="text" class="searchTerm" placeholder="Search...">
-            <button type="submit" class="searchButton">
-                <span class="material-icons-outlined md-48">
+            <input class="searchTerm" placeholder="Search..." type="text" name="name" id="name" >
+            <button type="submit" class="searchButton" name="search" id="search">
+                <span class="material-icons-outlined md-40">
                     search
                 </span>
             </button>
         </div>
+        </form>
     </div>
 </div>
 <div class="container-catalog py-16">
 @foreach($titulos as $id => $title)
-    <div class="catalog-card">
+    <a class="catalog-card" href="/videogames/{{$title['id']}}/{{$title['Nombre']}}">
         <img src="{{$title['Link']}}" alt="{{asset('storage/img/dummy1.jpg')}}" srcset="">
         <div class="catalog-card-content">
             {{$title['Nombre']}}
         </div>
-    </div>
+    </a>
 @endforeach
 </div>
 @endsection

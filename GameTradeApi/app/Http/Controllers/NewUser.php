@@ -22,5 +22,16 @@ class NewUser extends Controller
         ]);
 
     } 
+
+    public function find($id){
+        // dd($request->all());
+
+        $user = User::where('id', $id)->get('Username')->first();
+        
+        // $response = $user->Username;
+
+        return $user ;
+
+    } 
     
 }

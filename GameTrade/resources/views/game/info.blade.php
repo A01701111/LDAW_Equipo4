@@ -7,15 +7,14 @@
             {{-- <div class="grid grid-cols-1 justify-items-center self-center w-full mx-4 md:mx-14"> --}}
             <div class="flex">
                 <div class="w-3/12">
-                    <img src="{{asset('storage/img/dummy1.jpg')}} " alt="nada" srcset="">
+                    <img src="{{$imagen}} " alt="nada" srcset="">
                 </div>
                 <div class="ml-8 w-2/6">
-                    <h1 class="mb-10 border-b border-gray-300 leading-10 py-2 text-xl font-bold tracking-wider">Game
-                        Name</h1>
-                    <h3 class=" border-b border-gray-300 leading-10 py-2 text-base">5/5</h3>
-                    <h3 class=" border-b border-gray-300 leading-10 py-2 text-base">Edition</h3>
-                    <h3 class=" border-b border-gray-300 leading-10 py-2 text-base">Version</h3>
-                    <h3 class=" border-b border-gray-300 leading-10 py-2 text-base">Console</h3>
+                    <h1 class="mb-10 border-b border-gray-300 leading-10 py-2 text-xl font-bold tracking-wider">{{$titulo}}</h1>
+                    <h3 class=" border-b border-gray-300 leading-10 py-2 text-base">Dueño: {{$juego['Uname']}}</h3>
+                    <h3 class=" border-b border-gray-300 leading-10 py-2 text-base">Consola: {{$juego['Consola']}}</h3>
+                    <h3 class=" border-b border-gray-300 leading-10 py-2 text-base">Estado: {{$juego['Estado_Fisico']}}</h3>
+                    <h3 class=" border-b border-gray-300 leading-10 py-2 text-base">{{$juego['Descripcion']}}</h3>
                 </div>
             </div>
             <div>

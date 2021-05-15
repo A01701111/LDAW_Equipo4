@@ -9,17 +9,26 @@
             add
         </span>
     </a>
+    <a class="rounded-full main-dark flex items-center justify-center round-btn-48 shadow-2xl item-menu-3"
+        href="/admin-add">
+        <span class="material-icons-outlined md-48">
+        fact_check
+        </span>
+    </a>
     <div class="wrap item-menu-4">
+    <form action="/buscar" method="get">
         <div class="search">
-            <input type="text" class="searchTerm" placeholder="Search...">
-            <button type="submit" class="searchButton">
-                <span class="material-icons-outlined md-48">
+            <input class="searchTerm" placeholder="Search..." type="text" name="name" id="name" >
+            <button type="submit" class="searchButton" name="search" id="search">
+                <span class="material-icons-outlined md-40">
                     search
                 </span>
             </button>
         </div>
+        </form>
     </div>
 </div>
+
 {{-- 
 Administrar Subida de titulos --}}
 <div class="grid grid-cols1 justify-items-center overflow-x-auto">
@@ -56,12 +65,14 @@ Administrar Subida de titulos --}}
 
 <div class="container-catalog py-16">
     @foreach($titulos as $id => $title)
-    <div class="catalog-card">
+    <div class="catalog-card justify-items-center">
         <img src="{{$title['Link']}}" alt="{{asset('storage/img/dummy1.jpg')}}" srcset="">
         <div class="catalog-card-content">
             {{$title['Nombre']}}
         </div>
+        <a href="/eliminar/{{$title['id']}}" class="main-red text-white px-8 py-2 border rounded-full text-center" style="width: 150px; height: 50px;">Delete</a>
     </div>
+    
     @endforeach
 </div>
 

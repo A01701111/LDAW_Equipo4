@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\CreateUser;
 use App\Models\Authentication;
+use App\Models\Rol_Priviledge;
 
 class RegisterController extends Controller
 {
@@ -37,8 +38,26 @@ class RegisterController extends Controller
 
             if ($token = Authentication::getToken($email, $password, $device)) {
                 $request->session()->regenerate();
-                $request->session()->put('token', $token['token']);
-                return redirect('/dashboard');
+                $request->session()->regenerate();
+
+                $request->session()->put('token', $token['token']['plainTextToken']);
+
+                if ($rol = Rol_Priviledge::getRol($email)) {
+
+                $request->session()->put('rol', $rol);
+
+                $request->session()->put('email', $email);
+
+                if($rol == 1){
+
+                    return redirect('/dashboard');
+
+                }else{
+
+                    return redirect('/admin');
+
+                }   
+                }
             }
         }
 

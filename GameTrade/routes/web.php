@@ -41,7 +41,20 @@ Route::post('/iniciar',[AuthController::class,'login']);
 
 Route::get('/cerrar',[AuthController::class,'logout'])->name('logout')->middleware('auth');
 
-Route::get('/game-info',[GameController::class,'index']);
+Route::get('/game-info/{id}/{title}',[GameController::class,'index']);
+
+Route::get('/videogames/{id}/{title}',[GameController::class,'videogames'])->middleware('auth');
+
+Route::get('/home',function () {
+
+    return view('landing');
+
+})->middleware('guest');
+
+Route::get('/buscar',[TitleController::class,'find'])->middleware('auth');
+
+Route::get('/eliminar/{id}',[TitleController::class,'delete'])->middleware('auth')->middleware('admin');
+
 
 /*
 Notas de emilio:

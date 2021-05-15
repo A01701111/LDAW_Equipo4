@@ -30,6 +30,14 @@ class TitleController extends Controller
 
     } 
 
+    public function search($name){
+   
+        $games =  Title::where('Nombre','LIKE','%'.$name.'%')->get();
+
+        return $games;
+
+    } 
+
     /**
      * Store a newly created resource in storage.
      *
@@ -72,6 +80,8 @@ class TitleController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        Title::where('id', $id)->delete();
+    
     }
 }

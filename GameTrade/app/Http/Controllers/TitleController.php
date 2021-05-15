@@ -56,6 +56,35 @@ class TitleController extends Controller {
 
     }
 
-    
+    public function find(Request $request)
+    {
+
+        $titulos = GetTitles::findTitle($request->name);
+
+        $rol = session('rol');
+
+        if ($rol == 1) {
+
+            return view("dashboard", ["titulos" => $titulos]);
+
+        }else{
+            
+            return view("admin.portal", ["titulos" => $titulos]);
+        }
+        
+    }
+
+    public function delete($id)
+    {
+
+        $titulos = GetTitles::removeTitle($id);
+
+        $titulos = GetTitles::index();
+        
+        return redirect('/admin');
+        
+    }
+
+
 
 }

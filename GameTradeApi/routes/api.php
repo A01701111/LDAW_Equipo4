@@ -20,6 +20,7 @@ use Illuminate\Validation\ValidationException;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\NewUser;
 use App\Http\Controllers\RolController;
+use App\Http\Controllers\GameController;
 
 Route::post('/sanctum/token', function (Request $request) {
     $request->validate([
@@ -47,9 +48,18 @@ Route::middleware('auth:sanctum')->get('/games/{name}', [TeamController::class, 
 
 Route::post('/newuser', [NewUser::class, "index"]);
 
+Route::middleware('auth:sanctum')->get('/getuser/{id}', [NewUser::class, "find"]);
+
 Route::get('/get-titles', [TitleController::class, "index"]);
 
 Route::middleware('auth:sanctum')->post('/add-title', [TitleController::class, "addTitle"]);
 
 Route::middleware('auth:sanctum')->post('/rol', [RolController::class, "index"]);
 
+Route::middleware('auth:sanctum')->get('/videogames/{id}', [GameController::class, "index"]);
+
+Route::middleware('auth:sanctum')->get('/game/{id}', [GameController::class, "game"]);
+
+Route::middleware('auth:sanctum')->post('/rmtitle/{id}', [TitleController::class, "destroy"]);
+
+Route::get('/find-title/{name}', [TitleController::class, "search"]);

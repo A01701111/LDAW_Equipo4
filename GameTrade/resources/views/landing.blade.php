@@ -13,12 +13,12 @@
 </div>
 <div class="container-catalog">
 @foreach($titulos as $id => $title)
-    <div class="catalog-card">
-        <img src=" {{$title['Link']}}" alt="#" srcset="">
+    <a class="catalog-card" href="/videogames/{{$title['id']}}/{{$title['Nombre']}}">
+        <img src="{{$title['Link']}}" alt="{{asset('storage/img/dummy1.jpg')}}" srcset="">
         <div class="catalog-card-content">
             {{$title['Nombre']}}
         </div>
-    </div>
+    </a>
 @endforeach
 
 </div>

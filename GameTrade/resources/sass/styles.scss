@@ -95,6 +95,11 @@ $rojoPeneDePerro:#F23953;
     align-self: center;
 }
 
+.delete{
+    width: 100px;
+    height: 100px;
+}
+
 @media screen and (max-width:767px) {
     #navbar {
         border-bottom: 8px solid $rojoPeneDePerro;

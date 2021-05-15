@@ -37,7 +37,7 @@
                     <a href="{{url('/login')}}" class="h-full py-5 align-middle px-3 text-white hover:text-grey-300">Login</a>
                     @endif
                     @if (session('token'))
-                    <a href="" class="h-full py-5 align-middle px-3 mx-5 text-white hover:text-grey-300 border-b-8 main-red-border">Home</a>
+                    <a href="/home" class="h-full py-5 align-middle px-3 mx-5 text-white hover:text-grey-300 border-b-8 main-red-border">Home</a>
                     <div class="flex items-center dropdown mr-3 ml-7">
                         <span class="material-icons text-white">
                             arrow_drop_down
@@ -70,7 +70,7 @@
         <!-- mobile menu -->
         <div class="mobile-menu hidden md:hidden">
             <div class="flex mx-6 justify-between mb-2 border-b-2 border-gray-500">
-                <a href="/dashboard" class="mr-3 text-white hover:text-gray-300 self-center">Home</a>
+                <a href="/home" class="mr-3 text-white hover:text-gray-300 self-center">Home</a>
                 <span class="material-icons text-white self-center">
                     home
                 </span>
