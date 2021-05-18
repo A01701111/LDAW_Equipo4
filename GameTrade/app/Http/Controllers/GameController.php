@@ -27,9 +27,19 @@ class GameController extends Controller
 
             $nombre = Games::getUname($juego['ID_User']);
 
-            $juego['Uname'] =  $nombre['Username'];
+            $juego['Uname'] = $nombre['Username'];
 
-            return view('game.info', ["juego" => $juego], ["titulo" => $title, "imagen" => $imglink]);
+            $comentarios = Games::getComments($id);
+
+            foreach ($comentarios as $key => &$value) {
+
+                $usuario = Games::getUname($value['ID_User']);
+
+                $value['Uname'] = $usuario['Username'];
+                
+            }
+
+            return view('game.info', ["juego" => $juego, "comentarios"=> $comentarios], ["titulo" => $title, "imagen" => $imglink]);
 
         }
 
@@ -56,5 +66,16 @@ class GameController extends Controller
         }
 
         return redirect('/dashboard');
+    }
+
+    public function comment(Request $request, $title)
+    {
+        if(Games::addComment($request->content, $title)){
+
+            return back()->with('flash_success', 'Comentario');
+
+        }
+
+        return redirect('/dashboard')->with('flash_success', 'Error de al escribir comentario');
     }
 }

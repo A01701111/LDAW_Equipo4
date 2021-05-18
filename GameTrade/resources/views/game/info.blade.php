@@ -27,11 +27,11 @@
             </div>
             <section>
                 <h2 class="my-5 border-b border-gray-300 leading-10  text-lg font-bold tracking-wider">Reviews</h2>
-                <form action="">
+                <form action="/comentar/{{$juego['id']}}" method="post">
                 @csrf
                 <div class="box border rounded flex flex-col shadow bg-white my-5">
                     <textarea placeholder="Write your review here"
-                        class="text-grey-darkest flex-1 p-2 m-1 bg-transparent" name="review"></textarea>
+                        class="text-grey-darkest flex-1 p-2 m-1 bg-transparent" name="content" id="content" ></textarea>
                     <div class="bg-gray-100 px-3 py-2 border-t rounded-b flex justify-end">
                         <button class="main-red text-white px-8 py-2 border rounded-full" type="submit">
                             Accept
@@ -39,18 +39,19 @@
                     </div>
                 </form>
                 </div>
+                @foreach($comentarios as $id => $comentario)
                 <div class="border-b border-gray-300">
                     <div class="flex py-5 border-b border-gray-300">
                         <span class="material-icons-outlined md-100">
                             account_circle
                         </span>
                         <div class="pl-8">
-                            <h3 class="my-3">USERNAME</h3>
-                            <h3 class="my-3">5/5</h3>
+                            <h3 class="my-3">{{$comentario['Uname']}}</h3>
                         </div>
                     </div>
-                    <p class="my-3 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed autem omnis doloremque repellendus ea. Pariatur ducimus ut temporibus ab unde culpa perferendis. Odio earum ut laudantium incidunt quaerat optio. Dolorum ipsum ullam cupiditate illum consequuntur quod quisquam! Alias explicabo at nam consectetur nesciunt est tempora impedit tempore dignissimos vitae, voluptates vero totam hic laboriosam similique, quidem labore aspernatur esse odit delectus cumque. Sapiente sit nihil veniam saepe animi omnis, similique corporis! Incidunt saepe ipsam dolores soluta eius natus perspiciatis maiores! Delectus quibusdam possimus quis itaque inventore, deserunt cum dolor vitae iste sunt, expedita quo totam, pariatur voluptate dignissimos illum cumque aut cupiditate repellat dolorem porro! Vel eligendi molestias commodi earum ipsam esse fugit, impedit magnam praesentium nihil tempora rem? Qui ullam aspernatur laborum sequi repudiandae quia natus temporibus laudantium hic in praesentium odit molestiae modi, ad necessitatibus! Voluptatibus.</p>
+                    <p class="my-3 text-justify">{{$comentario['Contenido']}}</p>
                 </div>
+                @endforeach
             </section>
         </div>
 

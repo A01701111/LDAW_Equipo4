@@ -55,6 +55,9 @@ Route::get('/buscar',[TitleController::class,'find'])->middleware('auth');
 
 Route::get('/eliminar/{id}',[TitleController::class,'delete'])->middleware('auth')->middleware('admin');
 
+Route::post('/comentar/{id}',[GameController::class,'comment'])->middleware('auth')->middleware('user');
+
+
 
 /*
 Notas de emilio:

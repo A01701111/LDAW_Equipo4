@@ -21,6 +21,7 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\NewUser;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\ComController;
 
 Route::post('/sanctum/token', function (Request $request) {
     $request->validate([
@@ -63,3 +64,7 @@ Route::middleware('auth:sanctum')->get('/game/{id}', [GameController::class, "ga
 Route::middleware('auth:sanctum')->post('/rmtitle/{id}', [TitleController::class, "destroy"]);
 
 Route::get('/find-title/{name}', [TitleController::class, "search"]);
+
+Route::middleware('auth:sanctum')->get('/comments/{name}', [ComController::class, "index"]);
+
+Route::middleware('auth:sanctum')->post('/comment', [ComController::class, "addComment"]);

@@ -9,4 +9,10 @@ class Review extends Model
 {
     use HasFactory;
     public $timestamps = false;
+
+    protected $fillable = [
+        'Contenido',
+        'ID_User',
+        'ID_Videojuego',
+    ];
 }
