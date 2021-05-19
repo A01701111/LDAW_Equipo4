@@ -12,7 +12,7 @@ class ComController extends Controller{
 
     public function index($name){
 
-        $comments =  Review::where('ID_Videojuego',$name)->get();
+        $comments =  Review::where('ID_Videojuego',$name)->orderBy('id', 'DESC')->get();
 
         return $comments;
     } 

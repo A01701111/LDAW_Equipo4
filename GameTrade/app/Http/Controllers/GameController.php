@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Games;
 use App\Models\GetTitles;
 
+
 class GameController extends Controller
 {
     public function index($id, $title)
@@ -70,12 +71,16 @@ class GameController extends Controller
 
     public function comment(Request $request, $title)
     {
+        $request->validate([
+            'content' => 'required',
+        ]);
+
         if(Games::addComment($request->content, $title)){
 
-            return back()->with('flash_success', 'Comentario');
+            return back()->with('alert', 'Comentario');
 
         }
 
-        return redirect('/dashboard')->with('flash_success', 'Error de al escribir comentario');
+        return redirect('/dashboard')->with('alert', 'Error de al escribir comentario');
     }
 }

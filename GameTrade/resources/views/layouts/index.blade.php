@@ -46,7 +46,7 @@
                             account_circle
                         </span>
                         <div class="dropdown-content mr-5">
-                            <a href="cerrar">Log out</a>
+                            <a href="{{url('/cerrar')}}">Log out</a>
                         </div>
                     </div>
                     @endif
