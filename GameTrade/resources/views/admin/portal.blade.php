@@ -3,28 +3,28 @@
 <div class="container-catalog-menu py-10">
     <h1 class="item-menu-1 text-2xl text-gray-600">Portal de Administracion</h1>
 
-    <a class="rounded-full main-dark flex items-center justify-center round-btn-48 shadow-2xl item-menu-2"
+    <a class="mr-3 rounded-full main-dark flex items-center justify-center round-btn-48 shadow-2xl item-menu-2"
         href="/admin-add">
         <span class="material-icons-outlined md-48">
             add
         </span>
     </a>
-    <a class="rounded-full main-dark flex items-center justify-center round-btn-48 shadow-2xl item-menu-3"
+    <a class="mx-3 rounded-full main-dark flex items-center justify-center round-btn-48 shadow-2xl item-menu-3"
         href="/admin-add">
-        <span class="material-icons-outlined md-48">
-        fact_check
+        <span class="material-icons-outlined md-40 text-white">
+            fact_check
         </span>
     </a>
-    <div class="wrap item-menu-4">
-    <form action="/buscar" method="get">
-        <div class="search">
-            <input class="searchTerm" placeholder="Search..." type="text" name="name" id="name" >
-            <button type="submit" class="searchButton" name="search" id="search">
-                <span class="material-icons-outlined md-40">
-                    search
-                </span>
-            </button>
-        </div>
+    <div class="mr-3 wrap item-menu-4">
+        <form action="/buscar" method="get">
+            <div class="search">
+                <input class="searchTerm" placeholder="Search..." type="text" name="name" id="name">
+                <button type="submit" class="searchButton" name="search" id="search">
+                    <span class="material-icons-outlined md-40">
+                        search
+                    </span>
+                </button>
+            </div>
         </form>
     </div>
 </div>
@@ -45,7 +45,7 @@ Administrar Subida de titulos --}}
                 <th class=" px-10 py-5 text-left font-thin leading-10"></th>
                 <th class=" px-10 py-5 text-left font-thin leading-10"></th>
             </thead>
-            
+
             <tbody>
                 <tr class="border-b border-gray-300">
                     <td class="px-10 py-5 text-left leading-10 font-normal whitespace-no-wrap">gamename</td>
@@ -56,7 +56,8 @@ Administrar Subida de titulos --}}
                     <td class="px-5 py-5 text-center leading-10 font-normal whitespace-no-wrap"><button
                             class="main-red text-white px-8 border rounded-full">Accept</button></td>
                     <td class="px-5 pr-10 py-5 text-center leading-10 font-normal whitespace-no-wrap"><button
-                            class="text-main-red main-red-border px-8 border rounded-full">Deny</button></td>
+                            class="text-main-red main-red-border px-8 border rounded-full hover-main-red">Deny</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -66,13 +67,20 @@ Administrar Subida de titulos --}}
 <div class="container-catalog py-16">
     @foreach($titulos as $id => $title)
     <div class="catalog-card justify-items-center">
-        <img src="{{$title['Link']}}" alt="{{asset('storage/img/dummy1.jpg')}}" srcset="">
+        <div class="relative">
+            <a href="/eliminar/{{$title['id']}}"
+                class="absolute right-3 top-3 x-button p-1 flex items-center justify-center">
+                <span class="material-icons-outlined">
+                    close
+                </span>
+            </a>
+            <img src="{{$title['Link']}}" alt="{{asset('storage/img/dummy1.jpg')}}" srcset="">
+        </div>
         <div class="catalog-card-content">
             {{$title['Nombre']}}
         </div>
-        <a href="/eliminar/{{$title['id']}}" class="main-red text-white px-8 py-2 border rounded-full text-center" style="width: 150px; height: 50px;">Delete</a>
     </div>
-    
+
     @endforeach
 </div>
 

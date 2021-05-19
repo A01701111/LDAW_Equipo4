@@ -31,7 +31,7 @@
                 @csrf
                 <div class="box border rounded flex flex-col shadow bg-white my-5">
                     <textarea placeholder="Write your review here"
-                        class="text-grey-darkest flex-1 p-2 m-1 bg-transparent" name="content" id="content" ></textarea>
+                        class="text-grey-darkest flex-1 p-2 m-1 bg-transparent  focus:outline-none" name="content" id="content" ></textarea>
                     <div class="bg-gray-100 px-3 py-2 border-t rounded-b flex justify-end">
                         <button class="main-red text-white px-8 py-2 border rounded-full" type="submit">
                             Accept
