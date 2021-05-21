@@ -2,12 +2,15 @@
 @section('content')
 <div class="container-catalog-menu py-10">
     <h1 class="item-menu-1 text-2xl text-gray-600">Games catalog</h1>
+    @if (session('alert'))
+    <p>{{session('alert')}}</p>
+    @endif
 
-    <button class="rounded-full main-dark flex items-center justify-center round-btn-48 shadow-2xl item-menu-2">
+    <a href='/newGame' class="rounded-full main-dark flex items-center justify-center round-btn-48 shadow-2xl item-menu-2">
         <span class="material-icons-outlined md-48">
             add
         </span>
-    </button>
+    </a>
     <button class="rounded-full main-dark flex items-center justify-center round-btn-48 shadow-2xl item-menu-3">
         <span class="material-icons-outlined md-48">
             upload

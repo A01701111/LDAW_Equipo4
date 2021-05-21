@@ -83,4 +83,22 @@ class GameController extends Controller
 
         return redirect('/dashboard')->with('alert', 'Error de al escribir comentario');
     }
+
+    public function newGame(Request $request)
+    {
+        $request->validate([
+            'desc' => 'required',
+            'consola' => 'required',
+            'estado' => 'required',
+            'title' => 'required',
+        ]);
+
+        if(Games::addGame($request->title, $request->desc, $request->consola, $request->estado)){
+
+            return redirect('/dashboard')->with('alert', 'Juego Registrado');
+
+        }
+
+        return redirect('/newGame')->with('error', 'Error al registrar juego');
+    }
 }

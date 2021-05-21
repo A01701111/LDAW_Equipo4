@@ -9,4 +9,12 @@ class Videogame extends Model
 {
     use HasFactory;
     public $timestamps = false;
+
+    protected $fillable = [
+        'ID_Title',
+        'ID_User',
+        'Descripcion',
+        'Consola',
+        'Estado_Fisico',
+    ];
 }

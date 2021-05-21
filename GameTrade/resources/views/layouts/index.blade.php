@@ -84,7 +84,7 @@
             </div>
             @if (session('token'))
             <div class="flex mx-6 justify-between my-2 border-b-2 border-gray-500">
-                <a href="#" class="mr-3 text-white hover:text-gray-300 self-center">Register a physical copy</a>
+                <a href="/newGame" class="mr-3 text-white hover:text-gray-300 self-center">Register a physical copy</a>
                 <span class="material-icons text-white self-center">
                     add
                 </span>

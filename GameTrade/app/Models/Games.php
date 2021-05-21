@@ -57,4 +57,22 @@ class Games{
         return ($response->status() == 200);
 
     }
+
+    public static function addGame($title, $desc, $consola, $estado){
+
+        $token = session('token'); 
+
+        $email = session('email'); 
+
+        $response = Http::withToken($token)->post('http://127.0.0.1:8080/api/add-game',[
+            'email' => $email,
+            'title' => $title,
+            'desc' => $desc,
+            'consola' => $consola,
+            'estado' => $estado,
+        ]);
+
+        return ($response->status() == 200);
+
+    }
 }

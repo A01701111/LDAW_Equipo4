@@ -68,3 +68,5 @@ Route::get('/find-title/{name}', [TitleController::class, "search"]);
 Route::middleware('auth:sanctum')->get('/comments/{name}', [ComController::class, "index"]);
 
 Route::middleware('auth:sanctum')->post('/comment', [ComController::class, "addComment"]);
+
+Route::middleware('auth:sanctum')->post('/add-game', [GameController::class, "addGame"]);

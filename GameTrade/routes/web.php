@@ -57,6 +57,11 @@ Route::get('/eliminar/{id}',[TitleController::class,'delete'])->middleware('auth
 
 Route::post('/comentar/{id}',[GameController::class,'comment'])->middleware('auth')->middleware('user');
 
+Route::post('/game-add',[GameController::class,'newGame'])->middleware('auth')->middleware('user');
+
+Route::get('/newGame',[TitleController::class,'addGame'])->middleware('auth')->middleware('user');
+
+
 
 
 /*

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Videogame;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 class GameController extends Controller
 {
@@ -24,5 +25,21 @@ class GameController extends Controller
         return $games;
 
     }  
+
+    public function addGame(Request $request){
+
+        $user = User::where('email', $request->email)->get('id')->first();
+        
+        Videogame::create([
+        
+            'ID_Title'=>$request->title,
+            'ID_User'=>$user['id'],
+            'Descripcion'=>$request->desc,
+            'Consola'=>$request->consola,
+            'Estado_Fisico'=>$request->estado,
+            
+        ]);
+
+    } 
     
 }

@@ -33,6 +33,13 @@ class TitleController extends Controller {
         return view("admin.portal", ["titulos" => $titulos]);
     }
 
+    public function addGame(Request $request)
+    {
+        $titulos = GetTitles::index();
+
+        return view("game.new", ["titulos" => $titulos]);
+    }
+
     public function agregar(Request $request)
     {
         $request->validate([
