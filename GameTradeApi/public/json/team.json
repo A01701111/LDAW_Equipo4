@@ -1,0 +1,19 @@
+{
+    "emilio": {
+        "nombre": "Emilio Rivas Avalos",
+        "matricula": "A01704615",
+        "description": "Tengo mucha experiencia en front end manejando CSS, JS, JQuery, Bootstrap y materialize. En cuanto a back end tengo experiencia con .net y PHP"
+    },
+
+    "sebas": {
+        "name": "Sebastian Resendiz Chavez",
+        "matricula": "A01701111",
+        "description": "Tengo experiencia en múltiples lenguajes y herramientas para el desarrollo web, tales lenguajes como lo son PHP, JS, CSS y HTML. He usado librerías y Frameworks que te ayudan a desarrollar de mejor manera; he utilizado SASS, Bootstrap, React y Tailwind."
+    },
+
+    "mike": {
+        "name": "Miguel Angel Marines",
+        "matricula": "A01705317",
+        "description": "En cuanto al front end, he trabajado con HTML, CSS y Javascript. Con respecto al back end, he trabajado con PHP. Para bases de datos, he trabajado con MySQL y MySQL Server. En cuanto a frameworks, he utilizado Bootstrap para front end y Laravel."
+    }
+}
